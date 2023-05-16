@@ -32,7 +32,7 @@ export default function Feedback({ feedbackStats, setFeedbackStats }) {
       </Section>
 
       {/* statistics */}
-      {countTotalFeedback > 0 && (
+      {countTotalFeedback > 0 ? (
         <Statistics
           good={feedbackStats.Good}
           neutral={feedbackStats.Neutral}
@@ -40,6 +40,8 @@ export default function Feedback({ feedbackStats, setFeedbackStats }) {
           total={countTotalFeedback}
           positivePercentage={countPositiveFeedbackPercentage}
         />
+      ) : (
+        <div style={{ paddingTop: '16px' }}>No feedback given</div>
       )}
     </div>
   );
